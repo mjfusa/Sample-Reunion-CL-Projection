@@ -36,10 +36,7 @@ namespace App12Reunion
 
         public async void DoInAppPurchase()
         {
-            if (m_StoreContext == null)
-            {
-                m_StoreContext = StoreContext.GetDefault();
-            }
+            // Init m_StoreContext in Window_Activated
             var result = await m_StoreContext.RequestPurchaseAsync("9NWMTMH9PNGB");
             StoreConsumableResult res;
             switch (result.Status)
