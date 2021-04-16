@@ -28,25 +28,27 @@ namespace App12Reunion
         {
             this.InitializeComponent();
             txtVersion.Text = GetAppVersion();
+
+            var b = new RuntimeComponentCpp.SimpleMath();
+            var res = b.add(1, 3);
+            txtMath.Text = $"Result from RuntimeComponentCpp.SimpleMath.add. 1 + 3 = {res}";
         }
         public StoreContext m_StoreContext { get; private set; }
 
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
-            myButton.Content = "Clicked";
-            DoInAppPurchase();
+            //myButton.Content = "Clicked";
+            //DoInAppPurchase();
         }
 
         public async void DoInAppPurchase()
         {
             // Init m_StoreContext in Window_Activated
-            var res = await ClassLibrary1.Class1.DoPurchase("9NWMTMH9PNGB");
-            textBlock.Text = res;
+            //var res = await ClassLibrary1.Class1.DoPurchase("9NWMTMH9PNGB");
+            //textBlock.Text = res;
 
-            var b = new RuntimeComponentCpp.SimpleMath();
-            var res1 = b.add(1, 3);
 
-            MessageDialog msg = new MessageDialog($"Answer is {res1}");
+            MessageDialog msg = new MessageDialog($"No Internet");
             IInitializeWithWindow initializeWithWindowWrapper = msg.As<IInitializeWithWindow>();
             IntPtr hwnd = PInvoke.User32.GetActiveWindow();
             initializeWithWindowWrapper.Initialize(hwnd);
@@ -54,19 +56,15 @@ namespace App12Reunion
 
         }
 
-        bool bActivated = false;
+        //bool bActivated = false;
         private void Window_Activated(object sender, WindowActivatedEventArgs args)
         {
-            IntPtr hwnd = PInvoke.User32.GetActiveWindow();
-            if ( (hwnd == (IntPtr)0) || (bActivated) )
-            {
-                return;
-            }
-            ClassLibrary1.Class1.InitializeInAppPurchase(hwnd);
-            //m_StoreContext = StoreContext.GetDefault();
-            //IInitializeWithWindow initializeWithWindowWrapper = ((object)m_StoreContext).As<IInitializeWithWindow>();
-            //initializeWithWindowWrapper.Initialize(hwnd);
-            //bActivated = true;
+            //IntPtr hwnd = PInvoke.User32.GetActiveWindow();
+            //if ( (hwnd == (IntPtr)0) || (bActivated) )
+            //{
+            //    return;
+            //}
+            //ClassLibrary1.Class1.InitializeInAppPurchase(hwnd);
         }
 
         public string GetAppVersion()
