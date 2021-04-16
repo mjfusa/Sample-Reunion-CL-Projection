@@ -1,7 +1,9 @@
 ﻿using Microsoft.UI.Xaml;
 using System;
 using System.Runtime.InteropServices;
+using Windows.ApplicationModel;
 using Windows.Services.Store;
+using Windows.UI.Popups;
 using WinRT;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -25,6 +27,7 @@ namespace App12Reunion
         public MainWindow()
         {
             this.InitializeComponent();
+            txtVersion.Text = GetAppVersion();
         }
         public StoreContext m_StoreContext { get; private set; }
 
@@ -37,27 +40,17 @@ namespace App12Reunion
         public async void DoInAppPurchase()
         {
             // Init m_StoreContext in Window_Activated
-            var result = await m_StoreContext.RequestPurchaseAsync("9NWMTMH9PNGB");
-            StoreConsumableResult res;
-            switch (result.Status)
-            {
-                case StorePurchaseStatus.Succeeded:
-                    textBlock.Text = $"Store purchase succeeded: {result.Status}";
-                    break;
-                case StorePurchaseStatus.AlreadyPurchased:
-                    {
-                        res = await m_StoreContext.ReportConsumableFulfillmentAsync("9NWMTMH9PNGB", 1, Guid.NewGuid());
-                        textBlock.Text = $"Store purchase failed: {result.Status}";
-                        textBlock.Text += $"\nStore Fulfillment result: {res.Status}";
-                    }
-                    break;
-                default:
-                    {
-                        textBlock.Text = $"Store purchase failed: {result.Status}";
-                    }
-                    break;
-            }
+            var res = await ClassLibrary1.Class1.DoPurchase("9NWMTMH9PNGB");
+            textBlock.Text = res;
 
+            var b = new RuntimeComponentCpp.SimpleMath();
+            var res1 = b.add(1, 3);
+
+            MessageDialog msg = new MessageDialog($"Answer is {res1}");
+            IInitializeWithWindow initializeWithWindowWrapper = msg.As<IInitializeWithWindow>();
+            IntPtr hwnd = PInvoke.User32.GetActiveWindow();
+            initializeWithWindowWrapper.Initialize(hwnd);
+            await msg.ShowAsync();
 
         }
 
@@ -69,10 +62,22 @@ namespace App12Reunion
             {
                 return;
             }
-            m_StoreContext = StoreContext.GetDefault();
-            IInitializeWithWindow initializeWithWindowWrapper = ((object)m_StoreContext).As<IInitializeWithWindow>();
-            initializeWithWindowWrapper.Initialize(hwnd);
-            bActivated = true;
+            ClassLibrary1.Class1.InitializeInAppPurchase(hwnd);
+            //m_StoreContext = StoreContext.GetDefault();
+            //IInitializeWithWindow initializeWithWindowWrapper = ((object)m_StoreContext).As<IInitializeWithWindow>();
+            //initializeWithWindowWrapper.Initialize(hwnd);
+            //bActivated = true;
+        }
+
+        public string GetAppVersion()
+        {
+
+            Package package = Package.Current;
+            PackageId packageId = package.Id;
+            PackageVersion version = packageId.Version;
+
+            return "Version " + string.Format("{0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
+
         }
     }
 }
