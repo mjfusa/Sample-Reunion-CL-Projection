@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>RuntimeComponentCpp</id>
+    <title>RuntimeComponentCpp</title>
+    <version>0.1.0-prerelease</version>
+    <authors>mjfusa</authors>
+    <description>A simple winRT component projection for basic math operations in RuntimeComponentCpp</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.0" />
+      <group targetFramework="UAP10.0" />
+      <group targetFramework=".NETFramework4.6" />
+      <group targetFramework="net5.0">
+        <dependency id="Microsoft.Windows.CsWinRT" version="1.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <!--Support netcore3, uap, net46+, net5, c++ -->
+    <file src="..\_build\$platform$\$configuration$\RuntimeComponentCpp\bin\RuntimeComponentCpp\RuntimeComponentCpp.winmd" target="lib\netcoreapp3.0\RuntimeComponentCpp.winmd" />
+    <file src="..\_build\$platform$\$configuration$\RuntimeComponentCpp\bin\RuntimeComponentCpp\RuntimeComponentCpp.winmd" target="lib\uap10.0\RuntimeComponentCpp.winmd" />
+    <file src="..\_build\$platform$\$configuration$\RuntimeComponentCpp\bin\RuntimeComponentCpp\RuntimeComponentCpp.winmd" target="lib\net46\RuntimeComponentCpp.winmd" />
+    <file src="..\_build\$platform$\$configuration$\RuntimeComponentCpp\bin\RuntimeComponentCpp\RuntimeComponentCpp.dll" target="runtimes\win10-x64\native\RuntimeComponentCpp.dll" />
+    <file src="..\_build\$platform$\$configuration$\SimpleMathProjection\bin\SimpleMathProjection.dll" target="lib\net5.0\SimpleMathProjection.dll" />
+  </files>
+</package>
