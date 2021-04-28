@@ -23,6 +23,7 @@ namespace SimpleGeolocation
                 case GeolocationAccessStatus.Allowed:
                     // Create Geolocator and define perodic-based tracking (2 second interval).
                     var _geolocator = new Geolocator { ReportInterval = 2000 };
+                    _geolocator.DesiredAccuracy = PositionAccuracy.High;
                     position = await _geolocator.GetGeopositionAsync();
                     result = $"{position.Coordinate.Latitude},{position.Coordinate.Longitude}";
                     break;
