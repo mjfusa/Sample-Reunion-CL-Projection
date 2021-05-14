@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMathProjection", "Sim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleGeolocation", "SimpleGeolocation\SimpleGeolocation.csproj", "{1CB16EA7-8DCC-4393-8436-7105CC02A4B4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPClassLibrary", "CPPClassLibrary\CPPClassLibrary.vcxproj", "{A6CD2779-B396-4F03-A396-BB03D73316A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +117,20 @@ Global
 		{1CB16EA7-8DCC-4393-8436-7105CC02A4B4}.Release|x64.Build.0 = Release|x64
 		{1CB16EA7-8DCC-4393-8436-7105CC02A4B4}.Release|x86.ActiveCfg = Release|x86
 		{1CB16EA7-8DCC-4393-8436-7105CC02A4B4}.Release|x86.Build.0 = Release|x86
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Debug|ARM.ActiveCfg = Debug|Win32
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Debug|arm64.ActiveCfg = Debug|Win32
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Debug|x64.ActiveCfg = Debug|x64
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Debug|x64.Build.0 = Debug|x64
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Debug|x86.ActiveCfg = Debug|Win32
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Debug|x86.Build.0 = Debug|Win32
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Release|Any CPU.ActiveCfg = Release|Win32
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Release|ARM.ActiveCfg = Release|Win32
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Release|arm64.ActiveCfg = Release|Win32
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Release|x64.ActiveCfg = Release|x64
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Release|x64.Build.0 = Release|x64
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Release|x86.ActiveCfg = Release|Win32
+		{A6CD2779-B396-4F03-A396-BB03D73316A0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
