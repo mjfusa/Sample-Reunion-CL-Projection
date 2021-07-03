@@ -4,5 +4,4 @@ goto end
 :signAppx
 Signtool.exe sign /a /v /fd SHA256 /f signingcert.pfx out.msix
 :end
-cd ..
 
