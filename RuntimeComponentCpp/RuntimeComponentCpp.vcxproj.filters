@@ -19,7 +19,6 @@
     <ClInclude Include="SimpleMath.h" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="Class.idl" />
     <Midl Include="SimpleMath.idl" />
   </ItemGroup>
   <ItemGroup>

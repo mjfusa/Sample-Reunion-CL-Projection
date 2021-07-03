@@ -42,15 +42,14 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\App12Reunion\App12Reunion.csproj</EntryPointProjectUniqueName>
-    <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
-    <PackageCertificateKeyFile>App12Reunion %28Package%29_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <PackageCertificateKeyFile>C:\workshop\MSIXWorkshop-ITPro\mikefra.pfx</PackageCertificateKeyFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <AppInstallerUri>\\MJFSURFACE\share</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <PackageCertificateThumbprint>7C3E31D591E3497EAFCA445E32F67739AB8566CE</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <AppxBundle>Always</AppxBundle>
@@ -93,10 +92,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.5]">
+    <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0">
       <IncludeAssets>build</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.5.5]">
+    <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.0">
       <IncludeAssets>build</IncludeAssets>
     </PackageReference>
     <PackageReference Include="PInvoke.User32">

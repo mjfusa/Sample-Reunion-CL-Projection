@@ -9,7 +9,7 @@
   <Identity
     Name="TrialTest123Package"
     Publisher="CN=mikefra"
-    Version="1.66.17.0" />
+    Version="1.66.18.0" />
 
   <Properties>
     <DisplayName>Trial Test 123</DisplayName>

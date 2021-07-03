@@ -10,7 +10,7 @@
 
   
   <ItemGroup>
-      <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.5]" />
+      <PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0" />
       <PackageReference Include="PInvoke.User32" Version="0.7.104" />
   </ItemGroup>
 
